@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du Personnel</title>
+    <link rel="stylesheet" href="assets/css/personnel.css">
+    <script src="assets/js/personnel.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Gestion du Personnel</h1>
+    </header>
+
+    <main>
+        <!-- Bouton pour créer un nouveau personnel -->
+        <button class="button blue" id="idPersonnel">Nouveau Personnel</button>
+
+        <!-- Tableau des personnels -->
+        <table id="tblPersonnel" class="records">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Poste</th>
+                    <th>Email</th>
+                    <th>Matricule</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Lignes ajoutées dynamiquement par JS -->
+            </tbody>
+        </table>
+
+        <!-- Modal pour créer/modifier un membre du personnel -->
+        <div class="model" id="modelPersonnel">
+            <div class="model-content">
+                <header class="model-header">
+                    <h2>Créer / Modifier Personnel</h2>
+                    <span class="model-close" id="modelPersonnelClose">&#10006;</span>
+                </header>
+
+                <form id="formPersonnel" class="model-form">
+                    <input type="text" class="model-field" id="personnelNom" data-index="new"
+                        placeholder="Nom" required>
+                    <input type="text" class="model-field" id="personnelPrenom" placeholder="Prénom" required>
+                    <select class="model-field" id="personnelPoste" required>
+                        <option value="">Sélectionner le poste</option>
+                        <option value="Médecin">Médecin</option>
+                        <option value="Infirmier">Infirmier</option>
+                        <option value="Administratif">Administratif</option>
+                        <option value="Technicien">Technicien</option>
+                        <option value="Cadre">Cadre</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                    <input type="email" class="model-field" id="personnelEmail" placeholder="Email" required>
+                    <input type="text" class="model-field" id="personnelMatricule" placeholder="Matricule" required>
+                </form>
+
+                <footer class="model-footer">
+                    <button class="button green" id="savePersonnel">Enregistrer</button>
+                    <button class="button blue" id="cancelPersonnel">Annuler</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

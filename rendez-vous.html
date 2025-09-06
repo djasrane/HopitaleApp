@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Rendez-vous</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/button.css">
+    <link rel="stylesheet" href="assets/css/rendezvous.css">
+
+    <script src="assets/js/rendezvous.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Gestion des Rendez-vous</h1>
+    </header>
+
+    <main>
+        <!-- Bouton Nouveau -->
+        <button class="button blue mobile" id="idRendezvous">Nouveau Rendez-vous</button>
+
+        <!-- Tableau des rendez-vous -->
+        <table id="tblRendezvous" class="records">
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Médecin</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Durée (min)</th>
+                    <th>Motif</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les rendez-vous seront générés dynamiquement -->
+            </tbody>
+        </table>
+
+        <!-- Modal Rendez-vous -->
+        <div class="model" id="modelRendezvous">
+            <div class="model-content">
+                <header class="model-header">
+                    <h2>Créer / Modifier Rendez-vous</h2>
+                    <span class="model-close" id="modelRendezvousClose">&#10006;</span>
+                </header>
+
+                <form id="formRendezvous" class="model-form">
+                    <select class="model-field" id="rvPatient" data-index="new" required>
+                        <option value="">Sélectionner un patient</option>
+                    </select>
+
+                    <select class="model-field" id="rvPersonnel" required>
+                        <option value="">Sélectionner un médecin</option>
+                    </select>
+
+                    <input type="date" class="model-field" id="rvDate" required>
+                    <input type="time" class="model-field" id="rvTime" required>
+                    <input type="number" class="model-field" id="rvDuree" placeholder="Durée (min)" min="5" max="240" required>
+                    <input type="text" class="model-field" id="rvMotif" placeholder="Motif" maxlength="500" required>
+                </form>
+
+                <footer class="model-footer">
+                    <button class="button green" id="saveRendezvous">Enregistrer</button>
+                    <button class="button blue" id="cancelRendezvous">Annuler</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+/* ============================
+   Modal Consultation
+============================ */
+.model {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 10px;
+  }
+  
+  .model.active {
+    display: flex;
+  }
+  
+  .model-content {
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .model-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .model-close {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease;
+  }
+  
+  .model-close:hover {
+    color: #e74c3c;
+  }
+  
+  .model-field {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+  }
+  
+  .model-field:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  /* ============================
+     Footer Buttons
+  ============================ */
+  .model-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* ============================
+     Table Consultations
+  ============================ */
+  .records {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+  }
+  
+  .records th, .records td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .records th {
+    background-color: #3498db;
+    color: #fff;
+    text-align: left;
+  }
+  
+  .records tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .records tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* ============================
+     Action Buttons in Table
+  ============================ */
+  .records .button.green {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .records .button.red {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .records .button.green:hover {
+    background-color: #27ae60;
+  }
+  
+  .records .button.red:hover {
+    background-color: #c0392b;
+  }
+  
+  /* ============================
+     Responsive Table
+  ============================ */
+  @media (max-width: 768px) {
+    .records thead {
+      display: none;
+    }
+  
+    .records tr {
+      display: block;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+    }
+  
+    .records td {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+  
+    .records td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #555;
+    }
+  
+    .records td:last-child {
+      border-bottom: none;
+    }
+  }
+  

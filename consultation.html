@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Consultations</title>
+
+    <!-- CSS Globaux -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/button.css">
+    <link rel="stylesheet" href="assets/css/consultation.css">
+
+    <!-- JS -->
+    <script src="assets/js/consultation.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Gestion Hospitalière - Consultations</h1>
+    </header>
+
+    <main>
+        <!-- Bouton Nouveau -->
+        <button class="button blue mobile" id="idConsultation">Nouvelle Consultation</button>
+
+        <!-- Tableau des consultations -->
+        <table id="tblConsultation" class="records">
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Médecin</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Durée (min)</th>
+                    <th>Diagnostic</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes seront générées dynamiquement avec JS -->
+            </tbody>
+        </table>
+
+        <!-- Modal Consultation -->
+        <div class="model" id="modelConsultation">
+            <div class="model-content">
+                <header class="model-header">
+                    <h2>Créer / Modifier Consultation</h2>
+                    <span class="model-close" id="modelConsultationClose">&#10006;</span>
+                </header>
+
+                <form id="formConsultation" class="model-form">
+                    <select class="model-field" id="consultPatient" data-index="new" required>
+                        <option value="">Sélectionner un patient</option>
+                    </select>
+
+                    <select class="model-field" id="consultPersonnel" required>
+                        <option value="">Sélectionner un médecin</option>
+                    </select>
+
+                    <input type="date" class="model-field" id="consultDate" required>
+                    <input type="time" class="model-field" id="consultTime" required>
+                    <input type="number" class="model-field" id="consultDuree" placeholder="Durée (min)" min="15" max="120" required>
+                    <textarea class="model-field" id="consultDiagnostic" placeholder="Diagnostic" minlength="10" maxlength="500" required></textarea>
+                </form>
+
+                <footer class="model-footer">
+                    <button class="button green" id="saveConsultation">Enregistrer</button>
+                    <button class="button blue" id="cancelConsultation">Annuler</button>
+                </footer>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+.records {
+    width: 100%;
+    user-select: none;
+}
+
+.records thead {
+    height: 50px;
+    background-color: var(--primary-color);
+    padding-left: 20px;
+}
+
+.records td {
+    height: 50px;
+    padding-left: 20px;
+}
+
+.records thead:last-child,
+.records td:last-child {
+    padding: 0;
+    min-width: 140px;
+    text-align: center;
+}
+
+.records tr:hover {
+    background-color: #FAD7A0;
+}
+
+@media(max-width: 480px) {
+    .records {
+        border-spacing: 5px;
+    }
+    .records thead {
+        display: none;
+    }
+    .records tr {
+        box-shadow: 0 1px 3px #99A3A4;
+    }
+    .records td:not(:first-child) {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .records td {
+        margin: 10px 0;
+    }
+    .records tr:hover {
+        background-color: inherit;
+    }
+}
+
+/* Tableau de base */
+table.records {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+table.records th,
+table.records td,
+table.records tr {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table.records th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Style des boutons dans le tableau */
+button.button.green {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button.button.red {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button.button.green:hover,
+button.button.red:hover {
+    opacity: 0.8;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 1024px) {
+    table.records thead {
+        display: none; /* Cache l'entête sur mobile */
+    }
+
+    table.records, table.records tbody, table.records tr, table.records td {
+        display: block;
+        width: 100%;
+    }
+
+    table.records tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    table.records td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    table.records td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+}

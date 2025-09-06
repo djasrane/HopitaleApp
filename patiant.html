@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/button.css">
+    <link rel="stylesheet" href="assets/css/records.css">
+    <link rel="stylesheet" href="assets/css/model.css">
+    <script src="assets/js/main.js" defer></script>
+    <title>GESTION HOSPITALIERE</title>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Gestion Hospitalière</h1>
+    </header>
+    <main>
+        <button class="button blue mobile" id="idStudent">Nouveau patient</button>
+        <table id="tblStudent" class="records">
+            <thead>
+                <tr>
+                    <td>Nom</td>
+                    <td>Prénom</td>
+                    <td>Date de Naissance</td>
+                    <td>Sexe</td>
+                    <td>Adresse</td>
+                    <td>Telephone</td>
+                    <td>Email</td>
+                    <td>Groupe Sanguin</td>
+                    <td>Historique Médical</td>
+                    <td>Allergies</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes seront ajoutées dynamiquement -->
+            </tbody>
+        </table>
+
+        <!-- Modal pour ajouter / éditer un patient -->
+        <div class="model" id="model">
+            <div class="model-content">
+                <header class="model-header">
+                    <h2>Créer un nouveau patient</h2>
+                    <span class="model-close" id="modelClose">&#10006;</span>
+                </header>
+                <form id="form" class="model-form">
+                    <input type="text" class="model-field" id="nom" data-index="new" placeholder="Nom" required>
+                    <input type="text" class="model-field" id="prenom" placeholder="Prénom" required>
+                    <input type="date" class="model-field" id="dateNaissance" placeholder="Date de Naissance" required>
+                    <select class="model-field" id="sexe" required>
+                        <option value="">Sexe</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                    </select>
+                    <input type="text" class="model-field" id="adresse" placeholder="Adresse" required>
+                    <input type="tel" class="model-field" id="telephone" placeholder="Téléphone" required>
+                    <input type="email" class="model-field" id="email" placeholder="Email" required>
+                    <input type="text" class="model-field" id="groupeSanguin" placeholder="Groupe Sanguin" required>
+                    <input type="text" class="model-field" id="historiqueMedica" placeholder="Historique Médical">
+                    <input type="text" class="model-field" id="allergies" placeholder="Allergies">
+                </form>
+                <footer class="model-footer">
+                    <button class="button green" id="save">Enregistrer</button>
+                    <button class="button blue" id="cancel" type="button">Annuler</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

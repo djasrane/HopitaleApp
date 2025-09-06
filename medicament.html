@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Médicaments</title>
+    <link rel="stylesheet" href="assets/css/medicament.css">
+    <script src="assets/js/medicament.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="header-title">Gestion des Médicaments</h1>
+    </header>
+
+    <main>
+        <button class="button blue" id="idMedicament">Nouveau Médicament</button>
+
+        <table id="tblMedicament" class="records">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Dosage</th>
+                    <th>Forme</th>
+                    <th>Quantité</th>
+                    <th>Seuil Alerte</th>
+                    <th>Date Expiration</th>
+                    <th>Catégorie</th>
+                    <th>Statut Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="model" id="modelMedicament">
+            <div class="model-content">
+                <header class="model-header">
+                    <h2>Créer / Modifier Médicament</h2>
+                    <span class="model-close" id="modelMedicamentClose">&#10006;</span>
+                </header>
+
+                <form id="formMedicament" class="model-form">
+                    <input type="text" class="model-field" id="medNom" data-index="new" placeholder="Nom" required>
+                    <input type="text" class="model-field" id="medDescription" placeholder="Description">
+                    <select class="model-field" id="medDosage" required>
+                        <option value="">Sélectionner le dosage</option>
+                        <option value="50mg">50mg</option>
+                        <option value="100mg">100mg</option>
+                        <option value="200mg">200mg</option>
+                        <option value="500mg">500mg</option>
+                        <option value="1g">1g</option>
+                        <option value="2g">2g</option>
+                        <option value="5g">5g</option>
+                        <option value="10g">10g</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <select class="model-field" id="medForme" required>
+                        <option value="">Sélectionner la forme</option>
+                        <option value="comprimé">Comprimé</option>
+                        <option value="gélule">Gélule</option>
+                        <option value="sirop">Sirop</option>
+                        <option value="injection">Injection</option>
+                        <option value="pommade">Pommade</option>
+                        <option value="suppositoire">Suppositoire</option>
+                        <option value="collyre">Collyre</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <input type="number" class="model-field" id="medQuantite" placeholder="Quantité disponible" required min="0">
+                    <input type="number" class="model-field" id="medSeuil" placeholder="Seuil alerte" min="0" value="10">
+                    <input type="date" class="model-field" id="medDateExp" placeholder="Date expiration" required>
+                    <select class="model-field" id="medCategorie" required>
+                        <option value="">Sélectionner la catégorie</option>
+                        <option value="antibiotique">Antibiotique</option>
+                        <option value="antidouleur">Antidouleur</option>
+                        <option value="anti-inflammatoire">Anti-inflammatoire</option>
+                        <option value="psychotrope">Psychotrope</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </form>
+
+                <footer class="model-footer">
+                    <button class="button green" id="saveMedicament">Enregistrer</button>
+                    <button class="button blue" id="cancelMedicament">Annuler</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
